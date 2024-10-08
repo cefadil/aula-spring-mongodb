@@ -1,6 +1,11 @@
 package dev.galileu.aulamongo.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "user") //se o parametro collection não for informado, o nome da coleção será o nome da classe em minúsculo
 public class User {
+    @Id
     private String id;
     private String name;
     private String email;
