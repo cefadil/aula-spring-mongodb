@@ -42,13 +42,12 @@ public class UserService {
 
     public User update(User obj) {
         User newObj = repo.findById(obj.getId()).orElse(null);
-        updateData(newObj, obj);
-        return repo.save(newObj);
-    }
-
-    private void updateData(User newObj, User obj) {
+        if (newObj == null) {
+            throw new ObjectNotFoundException("Objeto não encontrado");
+        }
         newObj.setName(obj.getName());
         newObj.setEmail(obj.getEmail());
+        return repo.save(newObj);
     }
 
 }

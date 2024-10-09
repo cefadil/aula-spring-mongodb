@@ -6,7 +6,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import dev.galileu.aulamongo.dto.AuthorDTO;
-import dev.galileu.aulamongo.dto.UserDTO;
 
 @Document(collection = "post")
 public class Post {
